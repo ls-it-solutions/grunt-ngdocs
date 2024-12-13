@@ -35,6 +35,7 @@ module.exports = function(grunt) {
           dest: 'docs/',
           startPage: '/api',
           scripts: ['angular.js'],
+          templates: [],
           styles: [],
           title: pkg.title || pkg.name || '',
           html5Mode: false,
@@ -69,6 +70,12 @@ module.exports = function(grunt) {
       //Return the script path: doesn't have options.dest in it, it's relative
       //to the docs folder itself
       return gruntScriptsFolder + '/' + filename;
+    });
+
+    options.templates.forEach(function(template) {
+      var filename = template.split('/').pop();
+      //Use path.join here because we aren't sure if options.dest has / or not
+      grunt.file.copy(template, path.join(options.dest, gruntScriptsFolder, filename));
     });
 
     if (options.image && !linked.test(options.image)) {

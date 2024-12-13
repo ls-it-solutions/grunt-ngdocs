@@ -36,6 +36,7 @@ ngdocs: {
   options: {
     dest: 'docs',
     scripts: ['../app.min.js'],
+    templates: ['../<templates>/*.html'],
     html5Mode: true,
     startPage: '/api',
     title: "My Awesome Docs",
@@ -100,6 +101,12 @@ Possible values:
   - ['path/to/file.js'] file will be copied into the docs, into a `grunt-scripts` folder
   - ['http://example.com/file.js', 'https://example.com/file.js', '//example.com/file.js'] reference remote files (eg from a CDN)
   - ['../app.js'] reference file relative to the dest folder
+
+### templates
+[default] []
+
+Provide a list of html templates needed by the custom directives to be copied to the `/docs/grunt-js` folder.
+TODO: preserve original relative template path
 
 #### deferLoad
 [default] false
