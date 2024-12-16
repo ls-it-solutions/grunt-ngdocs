@@ -1,3 +1,13 @@
+# 0.2.12 (2024-12-16)
+## Features
+
+* enable copying of directive templates to the docs/grunt-js folder.
+  TODO respect the relative paths too... ([631a0ed8](https://github.com/ls-it-solutions/grunt-ngdocs/commit/631a0ed8)) 
+
+## Bug Fixes
+
+* fix failing unit tests due to missing separator after `#` from title
+
 # 0.2.11 (2018-01-27)
 
 ## Features
